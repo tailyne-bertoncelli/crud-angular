@@ -1,0 +1,17 @@
+<section class="d-flex flex-column align-items-center justify-content-center">
+    <h4 class="mt-4">LISTA DE LIVROS</h4>
+    <table class="table border w-50 mt-2">
+        <thead>
+            <tr class="text-center">
+                <th class="border" scope="col">NOME</th>
+                <th class="border" scope="col">AUTOR</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let liv of livro" class="text-center">
+                <td class="border">{{ liv.nome }}</td>
+                <td class="border">{{ liv.autor }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

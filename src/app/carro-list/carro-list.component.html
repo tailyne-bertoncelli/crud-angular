@@ -1,0 +1,17 @@
+<section class="d-flex flex-column align-items-center justify-content-center">
+    <h4 class="mt-4">LISTA DE CARROS</h4>
+    <table class="table border w-50 mt-2">
+        <thead>
+            <tr class="text-center">
+                <th class="border" scope="col">MODELO</th>
+                <th class="border" scope="col">ANO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let car of carro" class="text-center">
+                <td class="border">{{ car.nome }}</td>
+                <td class="border">{{ car.ano }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

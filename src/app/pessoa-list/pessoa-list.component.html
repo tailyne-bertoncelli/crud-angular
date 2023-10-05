@@ -1,0 +1,17 @@
+<section class="d-flex flex-column align-items-center justify-content-center">
+    <h4 class="mt-4">LISTA DE PESSOAS</h4>
+    <table class="table border w-50 mt-2">
+        <thead>
+            <tr class="text-center">
+                <th class="border" scope="col">NOME</th>
+                <th class="border" scope="col">AUTOR</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pes of lista" class="text-center">
+                <td class="border">{{ pes.nome }}</td>
+                <td class="border">{{ pes.idade }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
