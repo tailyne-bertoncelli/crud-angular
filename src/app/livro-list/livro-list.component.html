@@ -1,17 +1,41 @@
 <section class="d-flex flex-column align-items-center justify-content-center">
-    <h4 class="mt-4">LISTA DE LIVROS</h4>
-    <table class="table border w-50 mt-2">
+    <article class="mt-3 w-75 d-flex flex-row justify-content-between align-items-center">
+        <h4>LISTA DE LIVROS</h4>
+        <button type="button" class="btn btn-primary btn-sm" (click)="abrirModal(abc)">+ NOVO</button>
+    </article>
+    <table class="table border w-75 mt-2">
         <thead>
             <tr class="text-center">
                 <th class="border" scope="col">NOME</th>
                 <th class="border" scope="col">AUTOR</th>
+                <th class="border" scope="col">AÇÃO</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let liv of livro" class="text-center">
                 <td class="border">{{ liv.nome }}</td>
                 <td class="border">{{ liv.autor }}</td>
+                <td class="border">
+                    <a href="">
+                        <button type="button" class="btn btn-warning btn-sm">Editar</button>
+                    </a>
+                </td>
             </tr>
         </tbody>
     </table>
 </section>
+
+<ng-template #abc let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Novo livro</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+
+		<app-livro-detail (retorno)="addNaLista($event)"></app-livro-detail>
+            
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-light" (click)="modal.close('Close click')">Fechar</button>
+	</div>
+</ng-template>

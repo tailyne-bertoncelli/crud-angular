@@ -1,1 +1,10 @@
-<p>livro-detail works!</p>
+<label for="">
+    Nome do livro:
+    <input type="text" [(ngModel)]="livro.nome" />
+</label>
+
+<label for="">
+    Nome do autor:
+    <input type="text" [(ngModel)]="livro.autor" />
+</label>
+<button (click)="salvar()">Salvar</button>

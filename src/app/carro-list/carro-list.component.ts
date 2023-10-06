@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Carro } from './carro';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-carro-list',
@@ -8,6 +9,9 @@ import { Carro } from './carro';
 })
 export class CarroListComponent {
   carro: Carro[] = [];
+
+  modalService = inject(NgbModal);
+
   constructor() {
     let carro1 = new Carro();
     carro1.nome = "Evoque";
@@ -59,5 +63,14 @@ export class CarroListComponent {
     this.carro.push(carro8);
     this.carro.push(carro9);
     this.carro.push(carro10);
+  }
+
+  abrirModal(abc: any){
+    this.modalService.open(abc, { size: 'lg' });
+  }
+
+  addNaLista(carroNovo: Carro){
+    this.carro.push(carroNovo);
+    this.modalService.dismissAll();
   }
 }

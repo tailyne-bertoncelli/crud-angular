@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { Carro } from '../carro-list/carro';
 import { ActivatedRoute } from '@angular/router';
 
@@ -8,14 +8,17 @@ import { ActivatedRoute } from '@angular/router';
     styleUrls: ['./carro-detail.component.scss']
 })
 export class CarroDetailComponent {
-    carro: Carro = new Carro();
-    
     router = inject(ActivatedRoute);
-    constructor(){
+    carro: Carro = new Carro();
+
+    @Output() retorno = new EventEmitter<Carro>();
+
+    constructor() {
         let teste = this.router.snapshot.paramMap.get("id");
-        if (teste) {
-            this.carro.nome = "Fox";
-            this.carro.ano = 2020;
-        }
+        console.log(teste);
+    }
+
+    salvar() {
+        this.retorno.emit(this.carro);
     }
 }

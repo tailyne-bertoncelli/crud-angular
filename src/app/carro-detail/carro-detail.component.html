@@ -1,7 +1,16 @@
-<p>carro-detail works!</p>
+<!-- <p>carro-detail works!</p>
 <label for="modelo">MODELO
 <input [(ngModel)]="carro.nome" type="text" name="modelo" id="modelo"></label>
 <label for="ano">ANO
 <input [(ngModel)]="carro.ano" type="number" name="ano" id="ano"></label>
 <br><br>
-<p>{{ carro.nome }}</p>
+<p>{{ carro.nome }}</p> -->
+<label for="">
+    Nome do carro:
+    <input name="nome" type="text" [(ngModel)]="carro.nome" />
+</label>
+<label for="">
+    Ano:
+    <input type="number" [(ngModel)]="carro.ano" />
+</label>
+<button (click)="salvar()">Salvar</button>
